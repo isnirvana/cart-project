@@ -1,22 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product list with cart</title>
+    <title>Frontend Mentor | Product list with cart</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="products-list-container">
+        <h1>Desserts</h1>
+        <div class="product-container">
+          <div class="product-image-container">
+            <img
+              src="/assets/images/image-waffle-desktop.jpg"
+              alt="product-image"
+            />
+          </div>
+          <div class="product-category">Waffle</div>
+          <div class="product-name">Waffle with Berries</div>
+          <div class="product-price">6.50</div>
+          <button class="add-to-cart-btn">
+            <img
+              src="/assets/images/icon-add-to-cart.svg"
+              alt="add-to-cart-icon"
+            />
+            Add to Cart
+          </button>
+        </div>
+        <div class="product-container">
+          <div class="product-image-container">
+            <img
+              src="/assets/images/image-creme-brulee-desktop.jpg"
+              alt="product-image"
+            />
+          </div>
+          <div class="product-category">Crème Brûlée</div>
+          <div class="product-name">Vanilla Bean Crème Brûlée</div>
+          <div class="product-price">7.00</div>
+          <button class="add-to-cart-btn">
+            <img
+              src="/assets/images/icon-add-to-cart.svg"
+              alt="add-to-cart-icon"
+            />
+            Add to Cart
+          </button>
+        </div>
+        <div class="product-container">
+          <div class="product-image-container">
+            <img
+              src="/assets/images/image-macaron-desktop.jpg"
+              alt="product-image"
+            />
+          </div>
+          <div class="product-category">Macaron</div>
+          <div class="product-name">Macaron Mix of Five</div>
+          <div class="product-price">8.00</div>
+          <button class="add-to-cart-btn">
+            <img
+              src="/assets/images/icon-add-to-cart.svg"
+              alt="add-to-cart-icon"
+            />
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div class="cart-container">
+        <div class="cart">CART</div>
+      </div>
+    </main>
 
-  Desserts
+    <!-- Desserts
 
   Waffle with Berries
   Waffle
@@ -63,12 +136,13 @@
   6.50
   Add to Cart
 
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
+  Your Cart ( Quantity )
+  Your added items will appear here -->
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
