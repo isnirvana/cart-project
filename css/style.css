@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Red Hat Text";
+    src: url(/assets/fonts/RedHatText-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 4rem;
+  font-family: "Red Hat Text";
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+main {
+  display: flex;
+}
+
+.products-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  font-size: 16px;
+}
+
+.product-container {
+  position: relative;
+}
+
+.product-image-container img {
+  height: 15rem;
+  border-radius: 10px;
+}
+
+.product-info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+
+.product-category {
+    /* color: rgb(153, 151, 151); */
+    color: hsl(7, 20%, 60%);
+}
+
+.product-name {
+    font-weight: 700;
+}
+
+.product-price {
+    color: hsl(14, 86%, 42%);
+    font-weight: 600;
+}
+
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  font-weight: 600;
+  column-gap: .3rem;
+  bottom: 5rem;
+  left: 20%;
+  border: 1px solid rgb(167, 166, 166);
+  border-radius: 20px;
+  padding: 0.6rem 2rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    /* background-color: hsl(12, 85%, 90%); */
+    background-color: rgb(191, 190, 190);
+    transform: scale(1.1);
+    border: none;
+}
+
+.cart-container {
+  background-color: gray;
+  width: 30%;
+  margin-left: 1rem;
+}
