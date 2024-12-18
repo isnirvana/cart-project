@@ -3,6 +3,14 @@
     src: url(/assets/fonts/RedHatText-VariableFont_wght.ttf);
 }
 
+:root {
+  --primary-clr: hsl(14, 86%, 42%);
+  --secondary-clr: hsl(7, 20%, 60%);
+  --white: hsl(20, 50%, 98%);
+  --bg-clr: hsl(13, 31%, 94%);
+  --border-clr: rgb(167, 166, 166);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +20,7 @@
 body {
   padding: 4rem;
   font-family: "Red Hat Text";
+  background-color: var(--bg-clr);
 }
 
 h1 {
@@ -46,8 +55,7 @@ main {
 }
 
 .product-category {
-    /* color: rgb(153, 151, 151); */
-    color: hsl(7, 20%, 60%);
+    color: var(--secondary-clr);
 }
 
 .product-name {
@@ -55,7 +63,7 @@ main {
 }
 
 .product-price {
-    color: hsl(14, 86%, 42%);
+    color: var(--primary-clr);
     font-weight: 600;
 }
 
@@ -67,23 +75,22 @@ main {
   column-gap: .3rem;
   bottom: 5rem;
   left: 20%;
-  border: 1px solid rgb(167, 166, 166);
+  border: 1px solid var(--secondary-clr);
   border-radius: 20px;
   padding: 0.6rem 2rem;
-  background-color: white;
+  background-color: var(--white);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .add-to-cart-btn:hover {
-    /* background-color: hsl(12, 85%, 90%); */
-    background-color: rgb(191, 190, 190);
-    transform: scale(1.1);
-    border: none;
+  border: 1px solid var(--primary-clr);
+  color: var(--primary-clr);
+    transform: scale(1.05);
 }
 
-.cart-container {
-  background-color: gray;
+.cart {
+  background-color: var(--white);
   width: 30%;
   margin-left: 1rem;
 }
