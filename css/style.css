@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Red Hat Text";
-    src: url(/assets/fonts/RedHatText-VariableFont_wght.ttf);
+  font-family: "Red Hat Text";
+  src: url(/assets/fonts/RedHatText-VariableFont_wght.ttf);
 }
 
 :root {
@@ -20,19 +20,22 @@
 body {
   padding: 4rem;
   font-family: "Red Hat Text";
+  font-size: 15px;
   background-color: var(--bg-clr);
 }
 
 h1 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 main {
   display: flex;
+  justify-content: center;
 }
 
 .products-list-container {
   display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); */
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   font-size: 16px;
@@ -45,26 +48,35 @@ main {
 .product-image-container img {
   height: 15rem;
   border-radius: 10px;
+  user-select: none;
 }
 
 .product-info {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.3rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
 }
 
 .product-category {
-    color: var(--secondary-clr);
+  color: var(--secondary-clr);
 }
 
 .product-name {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .product-price {
-    color: var(--primary-clr);
-    font-weight: 600;
+  color: var(--primary-clr);
+  font-weight: 600;
+}
+
+button {
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
 }
 
 .add-to-cart-btn {
@@ -72,25 +84,16 @@ main {
   align-items: center;
   position: absolute;
   font-weight: 600;
-  column-gap: .3rem;
+  column-gap: 0.3rem;
   bottom: 5rem;
-  left: 20%;
+  left: 2.5rem;
   border: 1px solid var(--secondary-clr);
-  border-radius: 20px;
   padding: 0.6rem 2rem;
   background-color: var(--white);
-  cursor: pointer;
-  transition: all 0.2s;
 }
 
 .add-to-cart-btn:hover {
   border: 1px solid var(--primary-clr);
   color: var(--primary-clr);
-    transform: scale(1.05);
-}
-
-.cart {
-  background-color: var(--white);
-  width: 30%;
-  margin-left: 1rem;
+  transform: scale(1.05);
 }

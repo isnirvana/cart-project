@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
     <link
       rel="icon"
       type="image/png"
@@ -43,10 +44,13 @@
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
         <div class="product-container">
@@ -63,10 +67,13 @@
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
         <div class="product-container">
@@ -83,95 +90,138 @@
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
         <div class="product-container">
           <div class="product-image-container">
             <img
-              src="/assets/images/image-creme-brulee-desktop.jpg"
+              src="/assets/images/image-tiramisu-desktop.jpg"
               alt="product-image"
             />
           </div>
           <div class="product-info">
-            <div class="product-category">Crème Brûlée</div>
-            <div class="product-name">Vanilla Bean Crème Brûlée</div>
-            <div class="product-price">$7.00</div>
+            <div class="product-category">Tiramisu</div>
+            <div class="product-name">Classic Tiramisu</div>
+            <div class="product-price">$5.50</div>
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
         <div class="product-container">
           <div class="product-image-container">
             <img
-              src="/assets/images/image-macaron-desktop.jpg"
+              src="/assets/images/image-baklava-desktop.jpg"
               alt="product-image"
             />
           </div>
           <div class="product-info">
-            <div class="product-category">Macaron</div>
-            <div class="product-name">Macaron Mix of Five</div>
-            <div class="product-price">$8.00</div>
+            <div class="product-category">Baklava</div>
+            <div class="product-name">Pistachio Baklava</div>
+            <div class="product-price">$4.00</div>
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
         <div class="product-container">
           <div class="product-image-container">
             <img
-              src="/assets/images/image-macaron-desktop.jpg"
+              src="/assets/images/image-meringue-desktop.jpg"
               alt="product-image"
             />
           </div>
           <div class="product-info">
-            <div class="product-category">Macaron</div>
-            <div class="product-name">Macaron Mix of Five</div>
-            <div class="product-price">$8.00</div>
+            <div class="product-category">Pie</div>
+            <div class="product-name">Lemon Meringue Pie</div>
+            <div class="product-price">$5.00</div>
           </div>
           <button class="add-to-cart-btn">
             <img
+              class="add-to-cart-icon"
               src="/assets/images/icon-add-to-cart.svg"
               alt="add-to-cart-icon"
             />
+
             Add to Cart
+            <img src="/assets/images/icon-increment-quantity.svg" alt="#" />
           </button>
         </div>
       </div>
       <div class="cart">
-        <div class="cart-quantity">Your Cart(<span>7</span>)</div>
+        <div class="cart-quantity">Your Cart (<span>7</span>)</div>
         <div class="selected-product-container">
-          <div class="selected-product-name">Classic Tiramisu</div>
+          <div class="selected-product-name">
+            <strong>Classic Tiramisu</strong>
+          </div>
           <div class="selected-product-info">
             <div class="order-quantity">1x</div>
             <div class="order-price">@ $5.50</div>
             <div class="order-total">$5.50</div>
             <button class="delete">
-              <img src="/assets/images/icon-remove-item.svg" alt="#">
+              <img src="/assets/images/icon-remove-item.svg" alt="#" />
             </button>
           </div>
         </div>
-        <div class="cart-total-container">
+        <hr />
+        <div class="selected-product-container">
+          <div class="selected-product-name">
+            <strong>Vanilla Bean Crème Brûlée</strong>
+          </div>
+          <div class="selected-product-info">
+            <div class="order-quantity">4x</div>
+            <div class="order-price">@ $7.00</div>
+            <div class="order-total">$28.00</div>
+            <button class="delete">
+              <img src="/assets/images/icon-remove-item.svg" alt="#" />
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="selected-product-container">
+          <div class="selected-product-name">
+            <strong>Vanilla Panna Cotta</strong>
+          </div>
+          <div class="selected-product-info">
+            <div class="order-quantity">2x</div>
+            <div class="order-price">@ $6.50</div>
+            <div class="order-total">$13.00</div>
+            <button class="delete">
+              <img src="/assets/images/icon-remove-item.svg" alt="#" />
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="total-container">
           Order Total
           <div class="total">$46.50</div>
         </div>
         <div class="cart-delivery-name">
-          <img src="/assets/images/icon-carbon-neutral.svg" alt="#">
-          This is a <strong>carbon-neutral</strong> delivery
+          <img src="/assets/images/icon-carbon-neutral.svg" alt="#" />
+          <span>This is a <strong>carbon-neutral</strong> delivery</span>
         </div>
-        <button class="Confirm-order">confirm Order</button>
+        <button class="confirm-order">Confirm Order</button>
       </div>
     </main>
 
