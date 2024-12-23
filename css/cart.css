@@ -21,6 +21,12 @@ hr {
   font-size: 1.7rem;
 }
 
+#selected-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .selected-product-name {
   margin-bottom: 0.5rem;
 }
