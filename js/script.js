@@ -1,4 +1,4 @@
-import cart, { updateProductInCart } from "../js/cart.js"
+import cart, { updateProductInCart, calcOrderTotal } from "../js/cart.js"
 
 const URL = "../data.json"
 const productList = document.querySelector(".products-list-container")
@@ -6,15 +6,12 @@ const cartProducts = document.querySelector("#selected-items")
 const empty = document.querySelector(".empty")
 const show = document.querySelectorAll(".show")
 const cartQuantity = document.querySelector(".cart-quantity")
-console.log(parseFloat(cartQuantity.querySelector("span").textContent))
 
 let isTrue = false
 
 productList.addEventListener("click", addToCart)
 
 function addToCart(event) {
-  
-
   if (!event.target.classList.contains("add-to-cart-btn")) return
   const targetEvent = event.target.closest(".product-container")
   const productName = targetEvent.querySelector(".product-name")
@@ -22,15 +19,21 @@ function addToCart(event) {
   let id = Date.now()
   id++
 
+  calcOrderTotal(productPrice)
+
   const quantity = cartQuantity.querySelector("span")
   const num = parseFloat(quantity.textContent)
+
+  if (num >= 50) {
+    alert("Your cart is full")
+    return
+  }
+
   quantity.textContent = num + 1
 
   const inIt = isProductInCart(productName)
   if (inIt) {
-    updateProductInCart(productName)
-    // console.log(inIt.id)
-    // console.log(inIt)
+    updateProductInCart(productName, productPrice)
   }
 
   if (inIt && isTrue) return
@@ -46,24 +49,25 @@ function addToCart(event) {
   selectedItem.classList = "selected-product-container"
   selectedItem.dataset.name = `${id}`
 
+  const totalProduct = parseFloat(productPrice.textContent)
+
   selectedItem.innerHTML = `
   <div class="selected-product-name">
-              <strong>${productName.textContent}</strong>
-            </div>
-            <div class="selected-product-info">
-            <div class="order-quantity">1x</div>
-              <div class="${productPrice.textContent}">@ $5.50</div>
-              <div class="order-total">$5.50</div>
-              <button class="delete">
-              <img src="/assets/images/icon-remove-item.svg" alt="#" />
-              </button>
-              </div>
-              `
+    <strong>${productName.textContent}</strong>
+  </div>
+  <div class="selected-product-info">
+    <div class="order-quantity">1</div>
+    <div class="div1">x</div>
+    <div class="order-price">@ $${productPrice.textContent}</div>
+    <div class="div2">$</div>
+    <div class="total-product">${totalProduct.toFixed(2)}</div>
+    <button class="delete">
+      <img src="/assets/images/icon-remove-item.svg" alt="#" />
+    </button>
+  </div>
+ `
 
   cart.push({ productName: productName.textContent, id: id })
-  console.log(cart)
-  console.log(selectedItem.dataset.name)
-
   const hr = document.createElement("hr")
   cartProducts.appendChild(selectedItem)
   cartProducts.appendChild(hr)

@@ -40,10 +40,20 @@ hr {
   position: relative;
 }
 
-.order-total {
-  color: var(--secondary-clr);
+.order-price {
+  margin-right: .4rem;
 }
 
+.div2,
+.total-product {
+  color: var(--secondary-clr);
+  margin-left: -0.45rem;
+}
+
+.div1 {
+  color: var(--primary-clr);
+  margin-left: -.45rem;
+}
 .cart-quantity,
 .order-quantity {
   color: var(--primary-clr);
