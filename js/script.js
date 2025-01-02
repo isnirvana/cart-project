@@ -2,10 +2,10 @@ import cart, { updateProductInCart, calcOrderTotal } from "../js/cart.js"
 
 const URL = "../data.json"
 const productList = document.querySelector(".products-list-container")
-const cartProducts = document.querySelector("#selected-items")
 const empty = document.querySelector(".empty")
 const show = document.querySelectorAll(".show")
 const cartQuantity = document.querySelector(".cart-quantity")
+export const cartProducts = document.querySelector("#selected-items")
 
 let isTrue = false
 
@@ -53,7 +53,7 @@ function addToCart(event) {
 
   selectedItem.innerHTML = `
   <div class="selected-product-name">
-    <strong>${productName.textContent}</strong>
+  <strong>${productName.textContent}</strong>
   </div>
   <div class="selected-product-info">
     <div class="order-quantity">1</div>
@@ -62,10 +62,10 @@ function addToCart(event) {
     <div class="div2">$</div>
     <div class="total-product">${totalProduct.toFixed(2)}</div>
     <button class="delete">
-      <img src="/assets/images/icon-remove-item.svg" alt="#" />
+    <img class="delete-img" src="/assets/images/icon-remove-item.svg" alt="#" />
     </button>
-  </div>
- `
+    </div>
+    `
 
   cart.push({ productName: productName.textContent, id: id })
   const hr = document.createElement("hr")
