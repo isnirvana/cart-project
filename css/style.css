@@ -22,6 +22,7 @@ body {
   font-family: "Red Hat Text";
   font-size: 15px;
   background-color: var(--bg-clr);
+  position: relative;
 }
 
 h1 {

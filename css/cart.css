@@ -29,6 +29,7 @@ hr {
 
 .selected-product-name {
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .selected-product-info {
@@ -89,6 +90,10 @@ hr {
   font-size: 13px;
 }
 
+.total {
+  font-weight: 700;
+}
+
 .confirm-order {
   background-color: var(--primary-clr);
   color: var(--white);
@@ -99,6 +104,7 @@ hr {
 
 .confirm-order:hover {
   background-color: hsl(14, 88%, 27%);
+  transform: scale(1.01);
 }
 
 .empty img {

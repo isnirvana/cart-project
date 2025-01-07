@@ -1,4 +1,5 @@
 import cart, { updateProductInCart, calcOrderTotal } from "../js/cart.js"
+import {} from "../js/confirmation.js"
 
 const URL = "../data.json"
 const productList = document.querySelector(".products-list-container")
@@ -7,7 +8,7 @@ const show = document.querySelectorAll(".show")
 const cartQuantity = document.querySelector(".cart-quantity")
 export const cartProducts = document.querySelector("#selected-items")
 
-let isTrue = false
+let cartUpdated = false
 
 productList.addEventListener("click", addToCart)
 
@@ -31,19 +32,19 @@ function addToCart(event) {
 
   quantity.textContent = num + 1
 
-  const inIt = isProductInCart(productName)
-  if (inIt) {
+  const productExists = isProductInCart(productName)
+  if (productExists) {
     updateProductInCart(productName, productPrice)
   }
 
-  if (inIt && isTrue) return
+  if (productExists && cartUpdated) return
 
   empty.style.display = "none"
   show.forEach((element) => {
     element.classList.remove("show")
   })
 
-  isTrue = true
+  cartUpdated = true
 
   const selectedItem = document.createElement("div")
   selectedItem.classList = "selected-product-container"
@@ -52,9 +53,7 @@ function addToCart(event) {
   const totalProduct = parseFloat(productPrice.textContent)
 
   selectedItem.innerHTML = `
-  <div class="selected-product-name">
-  <strong>${productName.textContent}</strong>
-  </div>
+  <div class="selected-product-name">${productName.textContent}</div>
   <div class="selected-product-info">
     <div class="order-quantity">1</div>
     <div class="div1">x</div>
@@ -64,7 +63,7 @@ function addToCart(event) {
     <button class="delete">
     <img class="delete-img" src="/assets/images/icon-remove-item.svg" alt="#" />
     </button>
-    </div>
+  </div>
     `
 
   cart.push({ productName: productName.textContent, id: id })

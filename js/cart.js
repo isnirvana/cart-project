@@ -8,12 +8,14 @@ let cart = []
 
 let total = 0
 
+cartHTML.addEventListener("click", removeFromCart)
+
 export function updateProductInCart(productName, productPrice) {
-  const inIt = isProductInCart(productName)
-  const dataName = cartHTML.querySelector(`[data-name="${inIt.id}"]`)
+  const productExits = isProductInCart(productName)
+  const dataName = cartHTML.querySelector(`[data-name="${productExits.id}"]`)
   const orderQuantity = dataName.querySelector(".order-quantity")
-  const num = parseFloat(orderQuantity.textContent)
-  orderQuantity.textContent = num + 1
+  const currentQuantity = parseFloat(orderQuantity.textContent)
+  orderQuantity.textContent = currentQuantity + 1
 
   let totalProduct = dataName.querySelector(".total-product")
   let a = parseFloat(totalProduct.textContent)
@@ -28,17 +30,16 @@ export function calcOrderTotal(productPrice) {
   orderTotal.textContent = `$${total.toFixed(2)}`
 }
 
-cartHTML.addEventListener("click", removeFromCart)
-
 function removeFromCart(event) {
   if (event.target.classList.contains("delete-img")) {
     const targetEvent = event.target.closest(".selected-product-container")
-    const productName = targetEvent.querySelector("strong")
+    const productName = targetEvent.querySelector(".selected-product-name")
     const orderQuantity = targetEvent.querySelector(".order-quantity")
     const totalProduct = targetEvent.querySelector(".total-product")
-    const inIt = isProductInCart(productName)
+    const productExits = isProductInCart(productName)
+
     const filterdCart = cart.filter((item) => {
-      return item.id !== inIt.id
+      return item.id !== productExits.id
     })
 
     cart.length = 0
@@ -49,21 +50,29 @@ function removeFromCart(event) {
     const hr = targetEvent.nextElementSibling
     cartProducts.removeChild(targetEvent)
     cartProducts.removeChild(hr)
-    
+
     const quantity = cartQuantity.querySelector("span")
     quantity.textContent =
       parseFloat(quantity.textContent) - parseFloat(orderQuantity.textContent)
     const orderTotal = cartHTML.querySelector(".total")
-    const calcTotal = parseFloat(orderTotal.textContent.slice(1)) - parseFloat(totalProduct.textContent)
+    console.log(orderTotal);
+    
+    const calcTotal =
+      parseFloat(orderTotal.textContent.slice(1)) -
+      parseFloat(totalProduct.textContent)
     orderTotal.textContent = `$${calcTotal.toFixed(2)}`
     total = calcTotal
-    
-    if (parseFloat(quantity.textContent) === 0) {
-      empty.style.display = "flex"
-      show.forEach((element) => {
-        element.classList.add("show")
-      })
-    }
+    emptyCart(quantity)
+  }
+}
+
+export function emptyCart(quantity) {
+  if (parseFloat(quantity.textContent) === 0) {
+    total = 0
+    empty.style.display = "flex"
+    show.forEach((element) => {
+      element.classList.add("show")
+    })
   }
 }
 
