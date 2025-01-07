@@ -16,17 +16,17 @@ export function updateProductInCart(productName, productPrice) {
   const orderQuantity = dataName.querySelector(".order-quantity")
   const currentQuantity = parseFloat(orderQuantity.textContent)
   orderQuantity.textContent = currentQuantity + 1
-
+  
   let totalProduct = dataName.querySelector(".total-product")
   let a = parseFloat(totalProduct.textContent)
-  totalProduct.textContent = (parseFloat(productPrice.textContent) + a).toFixed(
+  totalProduct.textContent = (parseFloat(productPrice.textContent.slice(1)) + a).toFixed(
     2
   )
 }
 
 export function calcOrderTotal(productPrice) {
   const orderTotal = document.querySelector(".total")
-  total += parseFloat(productPrice.textContent)
+  total += parseFloat(productPrice.textContent.slice(1))
   orderTotal.textContent = `$${total.toFixed(2)}`
 }
 

@@ -1,13 +1,13 @@
 import cart, { emptyCart } from "../js/cart.js"
+import { isProductInCart } from "../js/script.js"
 
-const confirmOrder = document.querySelector(".confirm-order")
 const confirmation = document.querySelector(".confirmation-container")
 const overlay = document.querySelector(".overlay")
 const confirmOrderDiv = document.querySelector(".confirmation-order")
 const cartHTML = document.querySelector(".cart")
 let timeoutId = null
 
-confirmOrder.addEventListener("click", () => {
+export function confirmOrderInCart() {
   if (timeoutId) {
     clearInterval(timeoutId)
     overlay.style.opacity = "1"
@@ -23,22 +23,23 @@ confirmOrder.addEventListener("click", () => {
     const productQuantity = product.querySelector(".order-quantity")
     const productPrice = product.querySelector(".order-price")
     const totalProduct = product.querySelector(".total-product")
+    const productExits = isProductInCart(productName)
 
     productEL.innerHTML = `
-  <div class="product-img">
-    <img src="/assets/images/image-tiramisu-thumbnail.jpg" alt="#" />
-  </div>
-  <div class="confirmation-info">
-    <div class="confirmation-product-name">
-      <strong>${productName.textContent}<strong>
+    <div class="product-img">
+      <img src="/assets/images/image-${productExits.productCategory}-thumbnail.jpg" alt="#" />
     </div>
-    <div class="additional-info">
-      <div class="confirmation-order-quantity">${productQuantity.textContent}x</div>
-      <div class="confirmation-product-price">${productPrice.textContent}</div>
+    <div class="confirmation-info">
+      <div class="confirmation-product-name">
+        <strong>${productName.textContent}<strong>
+      </div>
+      <div class="additional-info">
+        <div class="confirmation-order-quantity">${productQuantity.textContent}x</div>
+        <div class="confirmation-product-price">${productPrice.textContent}</div>
+      </div>
     </div>
-  </div>
-  <div class="price-total">$${totalProduct.textContent}</div>
-`
+    <div class="price-total">$${totalProduct.textContent}</div>
+  `
     confirmOrderDiv.appendChild(productEL)
   })
 
@@ -50,7 +51,7 @@ confirmOrder.addEventListener("click", () => {
 
   confirmation.style.display = "flex"
   overlay.style.display = "block"
-})
+}
 
 confirmation.addEventListener("click", startNewOrder)
 
@@ -65,7 +66,7 @@ function startNewOrder(event) {
     selectedItems.innerHTML = ""
     emptyCart(quantity)
     overlay.style.opacity = "0"
-    
+
     timeoutId = setTimeout(() => {
       confirmation.style.display = "none"
       overlay.style.display = "none"

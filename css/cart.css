@@ -42,7 +42,7 @@ hr {
 }
 
 .order-price {
-  margin-right: .4rem;
+  margin-right: 0.4rem;
 }
 
 .div2,
@@ -53,7 +53,7 @@ hr {
 
 .div1 {
   color: var(--primary-clr);
-  margin-left: -.45rem;
+  margin-left: -0.45rem;
 }
 .cart-quantity,
 .order-quantity {
@@ -149,12 +149,13 @@ hr {
   }
 
   .product-image-container img {
-    height: 160%;
+    height: 190%;
     margin-top: -3.5rem;
   }
 
   .add-to-cart-btn {
-    transform: translate(25px);
+    left: 22%;
+    top: 55%;
   }
 
   .products-list-container {
@@ -164,6 +165,7 @@ hr {
   .cart {
     margin: 0;
     margin-top: 1rem;
+    min-width: 100%;
     width: 1rem;
   }
 }

@@ -40,6 +40,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 2rem;
   font-size: 16px;
+  margin: auto;
 }
 
 .product-container {
@@ -84,10 +85,14 @@ button {
   display: flex;
   align-items: center;
   position: absolute;
+  left: 15%;
+  top: 62%;
   font-weight: 600;
   column-gap: 0.3rem;
-  bottom: 5rem;
-  left: 2.5rem;
+  /* transform: translate(-50%, -50%); */
+  /* bottom: 5.5rem; */
+  /* left: 2.5rem; */
+  /* left: 15%; */
   border: 1px solid var(--secondary-clr);
   padding: 0.6rem 2rem;
   background-color: var(--white);
